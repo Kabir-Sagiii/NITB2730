@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      var studentObj = {
+        a: 10,
+      };
+      //100
+      var student2Obj = {
+        a: 100,
+      };
+
+      function fnCall(x, y) {
+        var b = x;
+        var c = y;
+        console.log(this.a + b + c);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <button onclick="fnCall.call(student2Obj,100,200)">Call Function</button>
+      <button onclick="fnCall.call(studentObj,10,20)">Call Function 2</button>
+
+      <button onclick="fnCall.apply(student2Obj,[100,200])">
+        apply Function
+      </button>
+      <button onclick="fnCall.apply(studentObj,[10,20])">
+        apply Function 2
+      </button>
+    </div>
+  </body>
+</html>

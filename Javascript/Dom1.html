@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <title>DOM</title>
+    <script>
+      function changeTitle() {
+        var h2Ref = document.getElementById("i1");
+
+        h2Ref.innerText = "Hello Javascript";
+        h2Ref.style.color = "red";
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h2 id="i1">Welcome to HTML</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+        nesciunt.
+      </p>
+      <button onclick="changeTitle()">Update Title</button>
+    </div>
+  </body>
+</html>
