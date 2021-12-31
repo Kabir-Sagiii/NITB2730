@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+        box-shadow: 0 0 10px black;
+        width: 300px;
+        margin: 100px auto;
+        padding: 30px;
+      }
+    </style>
+    <script>
+      function getUser() {
+        fetch("https://jsonplaceholder.typicode.com/user")
+          .then((res) => {
+            return res.json();
+          })
+
+          .then((actualdata) => {
+            console.log(actualdata);
+          })
+          .catch((err) => {
+            alert("Error while getting the data from server");
+          });
+      }
+
+      async function getPost() {
+        var res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        var data = await res.json();
+        console.log(data);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <button onclick="getUser()">Get User</button>
+      <button onclick="getPost()">Get Post</button>
+      <p></p>
+    </div>
+  </body>
+</html>
