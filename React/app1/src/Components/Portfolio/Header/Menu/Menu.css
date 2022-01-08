@@ -1,0 +1,10 @@
+#menu {
+  width: 60%;
+  float: right;
+  height: 70px;
+  line-height: 70px;
+}
+span {
+  margin-right: 30px;
+  color: white;
+}
