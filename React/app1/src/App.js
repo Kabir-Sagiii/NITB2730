@@ -4,6 +4,7 @@ import "./App.css";
 import Main from "./Components/Main/Main";
 import HeaderHome from "./Components/Portfolio/Header/HeaderHome";
 import MainHome from "./Components/Portfolio/Main/MainHome";
+import State from "./Components/State/State";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <h2>Welcome to React World</h2>
 
       <Main /> */}
-      <HeaderHome />
-      <MainHome />
+      {/* <HeaderHome />
+      <MainHome /> */}
+      <State />
     </div>
   );
 }

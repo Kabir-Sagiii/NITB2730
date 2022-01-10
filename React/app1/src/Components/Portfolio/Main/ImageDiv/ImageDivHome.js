@@ -5,7 +5,7 @@ import Content from "./Content/Content";
 class ImageDivHome extends React.Component {
   render() {
     return (
-      <div>
+      <div id="imgDiv">
         <Profile />
         <Content />
       </div>
