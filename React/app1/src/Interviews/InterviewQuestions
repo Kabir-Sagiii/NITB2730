@@ -1,0 +1,13 @@
+What is React ?and Purpose  ?
+What kind of application you can build using React ? 
+Explain What do you mean by SPA ? example : gmail,facebook 
+What are the features of React ?
+What are Components in React ?How many types of Component ?
+Can you explain the flow of React Application ?
+What is this Pacakage.json File ?
+What is state in react ?
+How to update your state ? this.setState()
+What is Statefull Component and Stateless Component ?
+What is the diff btw render() in react library and ReactDOM library ?
+
+
