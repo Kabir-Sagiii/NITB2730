@@ -9,5 +9,8 @@ What is state in react ?
 How to update your state ? this.setState()
 What is Statefull Component and Stateless Component ?
 What is the diff btw render() in react library and ReactDOM library ?
+What is diff between state and props ?
+What is props and purpose of props ? 
+How can you pass the data from parent comp to child comp ?
 
 

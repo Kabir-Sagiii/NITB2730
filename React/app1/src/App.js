@@ -6,11 +6,14 @@ import "./App.css";
 // import HeaderHome from "./Components/Portfolio/Header/HeaderHome";
 // import MainHome from "./Components/Portfolio/Main/MainHome";
 // import State from "./Components/State/State";
-import Person from "./Components/Parent-Child/Person";
+// import Person from "./Components/Parent-Child/Person";
+import Nav from "./Components/Navbar/Nav";
+import ProfileHome from "./Components/Profile/ProfileHome";
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       {/* <Header />
       <Main />
       <h2>Welcome to React World</h2>
@@ -19,7 +22,9 @@ function App() {
       {/* <HeaderHome />
       <MainHome /> */}
       {/* <State /> */}
-      <Person />
+
+      {/* <Person /> */}
+      <ProfileHome />
     </div>
   );
 }
