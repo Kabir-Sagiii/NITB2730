@@ -9,3 +9,10 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
+
+.bg-dark {
+  background: linear-gradient(45deg, darkred, black);
+}
+.btn-warning {
+  background: linear-gradient(180deg, darkblue, black);
+}
