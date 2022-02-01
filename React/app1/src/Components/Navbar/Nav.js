@@ -40,6 +40,16 @@ class Nav extends React.Component {
                 Context_Task
               </Link>
             </li>
+            <li>
+              <Link to="/MP" className="nav-link text-white">
+                MoutingPhase
+              </Link>
+            </li>
+            <li>
+              <Link to="/UP" className="nav-link text-white">
+                UpdatingPhase
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

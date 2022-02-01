@@ -10,7 +10,7 @@ import State from "./Components/State/State";
 import Nav from "./Components/Navbar/Nav";
 // import ProfileHome from "./Components/Profile/ProfileHome";
 // import Parent from "./Components/Child-Parent/Parent";
-// import FileData from "./Components/FileData/FileData";
+import FileData from "./Components/FileData/FileData";
 import AxiosUser from "./Components/Axios/AxiosUser";
 import Home from "./Components/ChatApp/Home";
 
@@ -19,6 +19,8 @@ import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import PageNotFound from "./Components/404/PageNotFound";
 import A from "./Components/ContextAPI/A";
 import ContextHome from "./Components/ContextAPI_Task/ContextHome";
+import MountingPhase from "./Components/Lifecylce/Mount";
+import UpdatePhase from "./Components/Lifecylce/UpdatePhase";
 
 function App() {
   return (
@@ -27,11 +29,13 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<UserProfile />} />
-          <Route path="/state" element={<State />} />
+          <Route path="/state" element={<FileData />} />
           <Route path="/axios" element={<AxiosUser />} />
           <Route path="/chat" element={<Home />} />
           <Route path="/contextapi" element={<A />} />
           <Route path="/contexttask" element={<ContextHome />} />
+          <Route path="/MP" element={<MountingPhase />} />
+          <Route path="/UP" element={<UpdatePhase />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

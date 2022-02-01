@@ -7,7 +7,7 @@ class FileData extends Component {
     super(props);
 
     this.state = {
-      userInfo: information,
+      userInfo: user.results,
     };
   }
 
@@ -23,10 +23,63 @@ class FileData extends Component {
     });
   };
 
+  filterUserData = (event) => {
+    if (event.target.value === "male") {
+      this.filterData = user.results.filter((ele) => {
+        return ele.gender === "male";
+      });
+      console.log(this.filterData);
+      this.setState({
+        userInfo: this.filterData,
+      });
+    } else if (event.target.value === "female") {
+      this.filterData = user.results.filter((ele) => {
+        return ele.gender === "female";
+      });
+      console.log(this.filterData);
+      this.setState({
+        userInfo: this.filterData,
+      });
+    } else {
+      this.setState({
+        userInfo: user.results,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="container mt-5">
         <div className="row">
+          <div className="col-4">
+            <input
+              type="radio"
+              name="gender"
+              value="all"
+              onChange={this.filterUserData}
+            />{" "}
+            ALL
+          </div>
+          <div className="col-4">
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              onChange={this.filterUserData}
+            />{" "}
+            Male
+          </div>
+          <div className="col-4">
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              onChange={this.filterUserData}
+            />{" "}
+            Female
+          </div>
+        </div>
+        <div className="row mt-5">
           <div className="col-4">
             <button className="btn btn-primary" onClick={this.updateData}>
               Update Information
@@ -51,7 +104,7 @@ class FileData extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.userInfo.results.map((element) => {
+                {this.state.userInfo.map((element) => {
                   console.log(element);
                   return (
                     <tr>

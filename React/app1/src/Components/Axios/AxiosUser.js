@@ -10,6 +10,10 @@ class AxiosUser extends Component {
     };
   }
 
+  componentDidMount() {
+    this.getUserData();
+  }
+
   getUserData = () => {
     Axios.get("https://jsonplaceholder.typicode.com/users").then(
       (response) => {
