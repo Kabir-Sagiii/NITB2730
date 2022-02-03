@@ -41,8 +41,8 @@ class Nav extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/MP" className="nav-link text-white">
-                MoutingPhase
+              <Link to="/hoc" className="nav-link text-white">
+                HOC
               </Link>
             </li>
             <li>

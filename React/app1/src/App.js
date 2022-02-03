@@ -21,6 +21,7 @@ import A from "./Components/ContextAPI/A";
 import ContextHome from "./Components/ContextAPI_Task/ContextHome";
 import MountingPhase from "./Components/Lifecylce/Mount";
 import UpdatePhase from "./Components/Lifecylce/UpdatePhase";
+import HOCHome from "./Components/HOC/HOCHome";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           <Route path="/chat" element={<Home />} />
           <Route path="/contextapi" element={<A />} />
           <Route path="/contexttask" element={<ContextHome />} />
-          <Route path="/MP" element={<MountingPhase />} />
+          <Route path="/hoc" element={<HOCHome />} />
           <Route path="/UP" element={<UpdatePhase />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
