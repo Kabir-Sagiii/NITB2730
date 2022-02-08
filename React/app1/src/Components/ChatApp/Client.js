@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import clientAction from "../../Actions/ClientAction";
+import { connect } from "react-redux";
 
 class Client extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Client extends Component {
     console.log(this.inputRef.current.value);
     console.log(this.passwordRef.current.innerText);
     alert(this.state.clientValue);
+    clientAction(this.state.clientValue, this.props.dispatch);
   };
 
   stateUpdated = (event) => {
@@ -61,4 +64,8 @@ class Client extends Component {
   }
 }
 
-export default Client;
+export default connect(null, (dispatch) => {
+  return {
+    dispatch,
+  };
+})(Client);

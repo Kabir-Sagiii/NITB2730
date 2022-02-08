@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Server extends Component {
   render() {
@@ -20,7 +21,7 @@ class Server extends Component {
               </div>
 
               <div className="card-footer">
-                <h4>Client Component Data</h4>
+                <h4>{this.props.data}</h4>
               </div>
             </div>
           </div>
@@ -29,4 +30,8 @@ class Server extends Component {
     );
   }
 }
-export default Server;
+export default connect((storeData) => {
+  return {
+    data: storeData.CR.clientMsg,
+  };
+}, null)(Server);
