@@ -21,6 +21,11 @@ import A from "./Components/ContextAPI/A";
 import ContextHome from "./Components/ContextAPI_Task/ContextHome";
 import MountingPhase from "./Components/Lifecylce/Mount";
 import UpdatePhase from "./Components/Lifecylce/UpdatePhase";
+import FunctionalComp from "./Components/FunctionalComp/FunctionalComp";
+import State from "./Components/useState/State";
+import Effect from "./Components/useEffect/Effect";
+import Effect1 from "./Components/useEffect/Effect1";
+import A from "./Components/useContext/A";
 import HOCHome from "./Components/HOC/HOCHome";
 
 function App() {
@@ -56,6 +61,10 @@ function App() {
       {/* <AxiosUser /> */}
       {/* <Home /> */}
       {/* <UserProfile /> */}
+ {/* <FunctionalComp /> */}
+      {/* <State /> */}
+      {/* <Effect1 /> */}
+      <A />
     </div>
   );
 }
