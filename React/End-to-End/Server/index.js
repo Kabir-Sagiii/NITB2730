@@ -2,8 +2,10 @@ const express = require("express"); // importing the express
 const app = express(); // Intilization the express module
 const UserRoute = require("./Routes/User");
 const ProductRoute = require("./Routes/Product");
+const bodyParser = require("body-parser"); //import body-parser
 const port = 2121;
 
+app.use(bodyParser.json());
 app.use("/UserRoute", UserRoute); //http://localhost:2121/UserRoute/user
 app.use("/PRoute", ProductRoute); //http://localhost:2121/PRoute/product
 
