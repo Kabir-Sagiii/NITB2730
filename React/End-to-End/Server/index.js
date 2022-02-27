@@ -3,8 +3,10 @@ const app = express(); // Intilization the express module
 const UserRoute = require("./Routes/User");
 const ProductRoute = require("./Routes/Product");
 const bodyParser = require("body-parser"); //import body-parser
+const cors = require("cors");
 const port = 2121;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/UserRoute", UserRoute); //http://localhost:2121/UserRoute/user
 app.use("/PRoute", ProductRoute); //http://localhost:2121/PRoute/product

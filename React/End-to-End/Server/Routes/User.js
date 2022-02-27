@@ -2,6 +2,7 @@ const express = require("express");
 const route = express.Router();
 const mongodb = require("mongodb"); //imported mongodb package
 const MongoClient = mongodb.MongoClient;
+
 const ObjectId = mongodb.ObjectId;
 // const {MongoClient} = require('mongodb')
 var url =
@@ -55,15 +56,17 @@ route.post("/storeUserData", function (req, res) {
   var n = req.body.name;
   var c = req.body.city;
   var e = req.body.email;
+  var p = req.body.password;
 
   var data = {
     name: n,
     city: c,
     email: e,
+    password: p,
   };
   MongoClient.connect(url, function (err, cluster) {
     if (err) {
-      res.send("Error while connecting with DB"); //http://localhost:2121//UserRoute/storeUserData
+      res.send("Error while connecting with DB"); //http://localhost:2121/UserRoute/storeUserData
     } else {
       var dbRef = cluster.db("NITReactB2DB");
       var collectionRef = dbRef.collection("UserCollection");
@@ -78,5 +81,63 @@ route.post("/storeUserData", function (req, res) {
     }
   });
 });
+
+route.put("/updateUserData/:id", function (req, res) {
+  var id = req.params.id;
+  console.log(req.query);
+
+  var name = req.query.name; //http://localhost:2121/UserRoute//updateUserData
+  var email = req.query.email;
+  var city = req.query.city;
+  console.log(name, email, city);
+
+  var updateData = {
+    name: name,
+    email: email,
+    city: city,
+  };
+  MongoClient.connect(url, function (err, cluster) {
+    if (err) {
+      res.send("Error while connecting with MongoDB");
+    } else {
+      var dbRef = cluster.db("NITReactB2DB");
+      var collectionRef = dbRef.collection("UserCollection");
+      collectionRef.updateOne(
+        { _id: ObjectId(id) },
+        {
+          $set: updateData,
+        },
+        function (err, msg) {
+          if (err) {
+            res.send("error while updating the data");
+          } else {
+            console.log(id);
+            res.send("Updated Successfully");
+          }
+        }
+      );
+    }
+  });
+});
+
+route.delete("/deleteUserData/:id", function (req, res) {
+  var id = req.params.id;
+  MongoClient.connect(url, function (err, cluster) {
+    if (err) {
+      res.send("Error while connecting with MongoDB");
+    } else {
+      var dbRef = cluster.db("NITReactB2DB");
+      var collectionRef = dbRef.collection("UserCollection");
+      collectionRef.deleteOne({ _id: ObjectId(id) }, function (err, msg) {
+        if (err) {
+          res.send("Error while deleting the record");
+        } else {
+          console.log(msg);
+          res.send("Deleted Successfully");
+        }
+      });
+    }
+  });
+}); //http:localhost:2121/UserRoute/deleteUserData/3913729731
 
 module.exports = route;
